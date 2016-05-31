@@ -1,0 +1,78 @@
+<div class="banner-home">
+  <div class="container">
+    <div class="info-home">
+      <h1>Receptenboek Rutte & Bras </h1>
+      <p>Vind en plaats de lekkerste recepten</p>
+
+      <div class="form-width">
+        <%= form_tag recipes_path, method: "get", class: "flex-form" do %>
+        <!-- <span class="fa fa-search icon-right"></span> -->
+        <%= text_field_tag :search, params[:search], placeholder: "Wat vind je lekker?" %>
+        <%= submit_tag("Zoek") %>
+        <% end %>
+      </div>
+    </div>
+    <a href="#categories">
+    <div class="arrow-btn text-center">
+      <i class="fa fa-angle-down"></i>
+    </div>
+    </a>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="home-header">
+    <h2 class="title text-center"> Vind je favoriete gerecht </h2>
+  </div>
+          <a name="categories"></a>
+  <!-- <div class="width-70"> -->
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(https://media-cdn.tripadvisor.com/media/photo-s/06/22/97/52/le-baroque.jpg);">
+        <div class="recipe-small">
+          <h2> Voorgerechten</h2>
+        </div>
+        <%= link_to "Voorgerechten", recipes_path(course: "Voorgerecht"), class: "card-link" %>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4">
+      <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(http://www.simpele-recepten.nl/wp-content/uploads/2014/12/Eendenborst.jpg);">
+        <div class="recipe-small">
+          <h2>Hoofdgerechten</h2>
+        </div>
+        <%= link_to "Hoofdgerechten", recipes_path(course: "Hoofdgerecht"), class: "card-link" %>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-4">
+      <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(http://www.ah.nl.kpnis.nl/static/recepten/img_075848_890x594_JPG.jpg);">
+        <div class="recipe-small">
+          <h2>Nagerechten</h2>
+        </div>
+        <%= link_to "Nagerechten", recipes_path(course: "Nagerecht"), class: "card-link" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="container is-small">
+    <div class="col-xs-12 col-sm-6">
+      <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(http://www.lelacbleu.nl/wp-content/uploads/72030742-e1425996486622-851x478.jpg);">
+        <div class="recipe-large">
+          <h2>Frans</h2>
+        </div>
+        <%= link_to "Frans", recipes_path(kitchen: "Frans"), class: "card-link" %>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(http://www.cosimo.be/gallipoli/sites/default/files/Pizza-Napoletana-klein.jpg);">
+        <div class="recipe-large">
+          <h2>Italiaans</h2>
+        </div>
+        <%= link_to "Italiaans", recipes_path(kitchen: "Italiaans"), class: "card-link" %>
+      </div>
+    </div>
+  </div>
+</div>

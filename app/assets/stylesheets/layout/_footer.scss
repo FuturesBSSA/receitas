@@ -1,0 +1,36 @@
+.footer-container {
+  background-color: #08090A;
+  text-align: center;
+  bottom: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+.footer-text {
+  margin-top: 40px;
+  color: rgb(250,250,250);
+  transition: color 0.3s, ease-in;
+  &:hover {
+    color: rgb(100,100,100);
+  }
+}
+
+.footer-spacing {
+  border-bottom: solid;
+  border-color: rgb(100,100,100);
+  border-width: 1px;
+  margin-bottom: 15px;
+}
+
+#follow-text {
+  color: rgb(250,250,250);
+}
+
+
+.footer-container a:hover{
+  color: #D3473C;
+}

@@ -1,0 +1,58 @@
+.arrow-btn {
+  background: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  left: 48%;
+  bottom: -25px;
+  z-index: 2;
+  // margin: 0 0 0 -25px;
+  line-height: 50px;
+  font-size: 30px;
+  text-align: center;
+  .fa-angle-down {
+    font-size: 38px;
+    color: black;
+  }
+}
+
+
+.tabs {
+  background: black;
+  text-align: center;
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  bottom: 0px;
+  left: 30%;
+  width: 500px;
+}
+.your-recipes-btn {
+  color: white;
+  padding-right: 15px;
+}
+
+.your-favorites-btn {
+ color: white;
+ padding-left: 15px;
+}
+
+
+a {
+ text-decoration: none ;
+ transition: color 0.2s ease;
+}
+a:hover
+{
+  color: #da552f;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tab.active {
+  color: #da552f;
+}

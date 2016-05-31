@@ -1,0 +1,11 @@
+<div class="container is-small">
+
+  <div class="review-form hidden">
+  <%= simple_form_for([@recipe, @review], remote: true) do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :content, :input_html => {:style=> 'width: 12em;'}, placeholder: "Geef hier uw review over dit recept", label: "Opmerking" %>
+    <%= f.input :rating, placeholder: "Tussen 1 - 5", :input_html => {:style => 'width: 12em;'}, label: "Score" %>
+    <%= f.submit "Voeg toe", class: "btn btn-success" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,145 @@
+<div class="banner-show">
+
+  <div class="recipe-name">
+    <h2 class="text-center"><%= @recipe.name %></h2>
+    <p> Gemaakt door <%= @recipe.user.first_name %></p>
+    <% if current_user.favorites.exists?(id: @recipe.id) %>
+    <ul class="list-inline product-controls">
+      <%= link_to favorite_recipe_path(@recipe, type: "unfavorite"), method: :put do %>
+      <li><i class="fa fa-heart"></i></li>
+      <% end %>
+    </ul>
+    <% else %>
+    <ul class="list-inline product-controls">
+      <%= link_to favorite_recipe_path(@recipe, type: "favorite"), method: :put do %>
+      <li><i class="fa fa-heart"></i></li>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
+
+
+
+</div>
+
+<div class="wrapper-recipe">
+
+  <div class="ingredients-section">
+
+
+    <div class="container is-small">
+      <div class="recipe">
+        <div class="recipe-photo">
+          <%= cl_image_tag @recipe.photo, height: 250, width: 300, crop: :fill %>
+        </div>
+
+          <h4>Ingrediënten</h4>
+        <div class="ingredients">
+          <div class="ingredient-info text-left">
+            <% @recipe.ingredients.each do |ingredient| %>
+            <p>
+              <%= ingredient.quantity %>
+              <%= ingredient.unit  %>
+              <%= ingredient.name  %>
+            </p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="prep-section">
+    <div class="container is-small">
+      <div class="text-center">
+        <div class="row">
+         <div class="col-xs-6 col-sm-3">
+          <div class="card-info">
+            <h4>Gang </h4>
+            <div class="card-details">
+              <p>
+                <%= @recipe.course %>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-3">
+          <div class="card-info">
+            <h4>Keuken </h4>
+            <div class="card-details">
+              <p>
+                <%= @recipe.kitchen %>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-3">
+          <div class="card-info">
+            <h4>Voorbereiding </h4>
+            <div class="card-details">
+              <p><%= @recipe.prep_time %> min</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-3">
+          <div class="card-info">
+            <h4>Kooktijd </h4>
+            <div class="card-details">
+              <p><%= @recipe.cooking_time %> min</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <h4 class="text-center">Bereidingswijze</h4>
+  <div class="container is-small">
+    <div class="description">
+      <div class="prep dont-break-out">
+        <%= @recipe.description %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="wrapper-review">
+  <div class="container is-small">
+
+
+    <h3 class="text-center">Reviews</h3>
+    <hr>
+
+    <div id="reviews">
+      <div class="review-container">
+        <div id="review-button", class="btn btn-success">
+          Geef uw review
+        </div>
+        <div id="give-review">
+          <% if user_signed_in? %>
+          <%= render 'reviews/new', restaurant: @restaurant, review: @review %>
+          <% end %>
+        </div>
+
+        <% if @recipe.reviews.blank? %>
+        Geef als eerste een recensie over <%= @recipe.name %>
+        <% else %>
+        <% @reviews.each do |review| %>
+        <%= render 'reviews/show', review: review %>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% if @reviews.present? %>
+  <div class="apple_pagination">
+    <%= will_paginate @reviews %>
+  </div>
+  <% end %>
+</div>

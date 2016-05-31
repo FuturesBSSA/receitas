@@ -1,0 +1,45 @@
+<div class="banner-profile">
+
+  <div class="container is-small">
+
+    <p>hello <%= @fullname %></p>
+
+    <% if @recipes.size < 5 %>
+    <p>Beginner</p>
+    <% end %>
+
+    <div class="list-inline product-controls ">
+      <li><%= link_to edit_profile_path do %>
+        <i class="fa fa-edit"></i>
+        <% end %>
+      </li>
+    </div>
+
+    <div class="tabs">
+      <div class="your-recipes-btn">
+        <a class= "tab active" data-target= "#your-recipes">
+          <h4>Jouw recepten</h4>
+        </a>
+      </div>
+
+      <div class="your-favorites-btn">
+        <a class= "tab" data-target= "#your-favo">
+          <h4>Favorieten</h4>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="tab-content" id="your-recipes">
+  <%= render "recipes" %>
+</div>
+
+
+<div class="tab-content hidden" id="your-favo">
+  <%= render "favorite_recipes" %>
+</div>
+
+
