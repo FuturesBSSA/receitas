@@ -17,7 +17,10 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'cocoon'
-gem 'will_paginate', '~> 3.1.0'
+
+#paginate
+# gem 'will_paginate', '~> 3.1.0'
+gem 'kaminari'
 
 #image upload
 gem "cloudinary"

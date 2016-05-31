@@ -19,5 +19,5 @@ class Recipe < ActiveRecord::Base
     # where("lower(kitchen) LIKE ?", "%#{search}%")
   end
 
-  WillPaginate.per_page = 2
+  # WillPaginate.per_page = 2
 end

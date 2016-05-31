@@ -42049,3 +42049,1295 @@ ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
   Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (146.7ms)
   Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (99.8ms)
   Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (707.3ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2016-05-31 17:18:01 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProfilesController#show as HTML
+  [1m[35mUser Load (4.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36m (1.4ms)[0m  [1mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[35mRecipe Load (1.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY created_at DESC LIMIT 30 OFFSET 0  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (155.2ms)
+  [1m[36mRecipe Load (2.6ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY created_at DESC LIMIT 30 OFFSET 0[0m  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (52.9ms)
+  Rendered profiles/show.html.erb within layouts/application (251.5ms)
+  Rendered shared/_navbar.html.erb (47.4ms)
+  Rendered shared/_flashes.html.erb (4.4ms)
+  Rendered shared/_footer.html.erb (1.0ms)
+Completed 200 OK in 1689ms (Views: 1114.5ms | ActiveRecord: 38.4ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2016-05-31 17:18:03 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (3.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (27.8ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (46.6ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (25.9ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (326.7ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2016-05-31 17:22:19 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProfilesController#show as HTML
+  [1m[35mUser Load (2.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36m (1.2ms)[0m  [1mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[35mRecipe Load (0.9ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY created_at DESC LIMIT 30 OFFSET 0  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (143.3ms)
+  [1m[36mRecipe Load (3.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY created_at DESC LIMIT 30 OFFSET 0[0m  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (90.0ms)
+  Rendered profiles/show.html.erb within layouts/application (265.0ms)
+  Rendered shared/_navbar.html.erb (48.3ms)
+  Rendered shared/_flashes.html.erb (1.8ms)
+  Rendered shared/_footer.html.erb (1.0ms)
+Completed 200 OK in 1646ms (Views: 1229.3ms | ActiveRecord: 23.8ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2016-05-31 17:22:21 +0200
+
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (18.1ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (25.1ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (68.6ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (27.0ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (422.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-31 20:08:12 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (15.7ms)
+  [1m[35mUser Load (2.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered shared/_navbar.html.erb (353.6ms)
+  Rendered shared/_flashes.html.erb (2.1ms)
+  Rendered shared/_footer.html.erb (3.5ms)
+Completed 200 OK in 1493ms (Views: 1478.2ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2016-05-31 20:08:15 +0200
+
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (18.9ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (21.1ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (59.5ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.8ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (302.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-31 20:21:46 +0200
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered shared/_navbar.html.erb (99.5ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 261ms (Views: 252.8ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2016-05-31 20:21:47 +0200
+
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (11.3ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.1ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (9.8ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (11.0ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (302.8ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2016-05-31 20:21:50 +0200
+Processing by ProfilesController#show as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 30 OFFSET 0[0m  [["user_id", 3]]
+Completed 500 Internal Server Error in 239ms (ActiveRecord: 2.9ms)
+
+NoMethodError - undefined method `per' for #<Recipe::ActiveRecord_AssociationRelation:0x007f2c7a5939b0>:
+  activerecord (4.2.6) lib/active_record/relation/delegation.rb:136:in `method_missing'
+  activerecord (4.2.6) lib/active_record/relation/delegation.rb:99:in `method_missing'
+  app/controllers/profiles_controller.rb:4:in `show'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.6) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+
+Started POST "/__better_errors/84a1acc61ce563ba/variables" for 127.0.0.1 at 2016-05-31 20:21:51 +0200
+
+
+Started GET "/profile" for 127.0.0.1 at 2016-05-31 20:24:52 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProfilesController#show as HTML
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+Completed 500 Internal Server Error in 503ms (ActiveRecord: 9.4ms)
+
+NameError - uninitialized constant Recipe::WillPaginate:
+  activesupport (4.2.6) lib/active_support/dependencies.rb:533:in `load_missing_constant'
+  activesupport (4.2.6) lib/active_support/dependencies.rb:184:in `const_missing'
+  app/models/recipe.rb:22:in `<class:Recipe>'
+  app/models/recipe.rb:1:in `<top (required)>'
+  activesupport (4.2.6) lib/active_support/dependencies.rb:457:in `block in load_file'
+  activesupport (4.2.6) lib/active_support/dependencies.rb:647:in `new_constants_in'
+  activesupport (4.2.6) lib/active_support/dependencies.rb:456:in `load_file'
+  activesupport (4.2.6) lib/active_support/dependencies.rb:354:in `require_or_load'
+  activesupport (4.2.6) lib/active_support/dependencies.rb:494:in `load_missing_constant'
+  activesupport (4.2.6) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.2.6) lib/active_support/dependencies.rb:526:in `load_missing_constant'
+  activesupport (4.2.6) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.2.6) lib/active_support/inflector/methods.rb:263:in `block in constantize'
+  activesupport (4.2.6) lib/active_support/inflector/methods.rb:259:in `constantize'
+  activesupport (4.2.6) lib/active_support/inflector/methods.rb:304:in `safe_constantize'
+  activesupport (4.2.6) lib/active_support/dependencies.rb:572:in `safe_get'
+  activesupport (4.2.6) lib/active_support/dependencies.rb:603:in `safe_constantize'
+  activerecord (4.2.6) lib/active_record/inheritance.rb:154:in `block in compute_type'
+  activerecord (4.2.6) lib/active_record/inheritance.rb:153:in `compute_type'
+  activerecord (4.2.6) lib/active_record/reflection.rb:295:in `compute_class'
+  activerecord (4.2.6) lib/active_record/reflection.rb:291:in `klass'
+  activerecord (4.2.6) lib/active_record/associations/association.rb:118:in `klass'
+  activerecord (4.2.6) lib/active_record/associations/collection_association.rb:41:in `reader'
+  activerecord (4.2.6) lib/active_record/associations/builder/association.rb:115:in `recipes'
+  app/controllers/profiles_controller.rb:4:in `show'
+  actionpack (4.2.6) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.6) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.6) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.6) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.6) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.6) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.6) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+
+Started POST "/__better_errors/1245a69a25a84dee/variables" for 127.0.0.1 at 2016-05-31 20:24:54 +0200
+
+
+Started GET "/profile" for 127.0.0.1 at 2016-05-31 20:25:24 +0200
+Processing by ProfilesController#show as HTML
+  [1m[36mUser Load (16.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (3.5ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 10 OFFSET 0) subquery_for_count  [["user_id", 3]]
+  [1m[36mRecipe Load (25.6ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY name LIMIT 10 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (298.3ms)
+  [1m[36mRecipe Load (1.8ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY name LIMIT 10 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (1.3ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (73.4ms)
+  Rendered profiles/show.html.erb within layouts/application (438.7ms)
+  Rendered shared/_navbar.html.erb (167.8ms)
+  Rendered shared/_flashes.html.erb (1.9ms)
+  Rendered shared/_footer.html.erb (1.0ms)
+Completed 200 OK in 2137ms (Views: 1661.7ms | ActiveRecord: 85.2ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2016-05-31 20:25:27 +0200
+
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (17.5ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (71.1ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (16.6ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (444.8ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2016-05-31 20:25:47 +0200
+Processing by ProfilesController#show as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (2.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 10 OFFSET 0) subquery_for_count  [["user_id", 3]]
+  [1m[36mRecipe Load (0.9ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY name LIMIT 10 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (169.2ms)
+  [1m[36mRecipe Load (1.6ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY name LIMIT 10 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (43.7ms)
+  Rendered profiles/show.html.erb within layouts/application (282.1ms)
+  Rendered shared/_navbar.html.erb (106.5ms)
+  Rendered shared/_flashes.html.erb (2.2ms)
+  Rendered shared/_footer.html.erb (1.3ms)
+Completed 200 OK in 1024ms (Views: 748.9ms | ActiveRecord: 27.5ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2016-05-31 20:25:48 +0200
+
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (14.6ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (31.2ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (11.2ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (159.4ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2016-05-31 20:26:39 +0200
+Processing by ProfilesController#show as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (2.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 5 OFFSET 0) subquery_for_count  [["user_id", 3]]
+  [1m[36mRecipe Load (0.9ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (253.0ms)
+  [1m[36mRecipe Load (1.8ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (1.2ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (56.6ms)
+  Rendered profiles/show.html.erb within layouts/application (345.6ms)
+  Rendered shared/_navbar.html.erb (48.6ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 1178ms (Views: 564.0ms | ActiveRecord: 38.4ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2016-05-31 20:26:41 +0200
+
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (23.4ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (43.1ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.7ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (25.4ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (377.5ms)
+
+
+Started GET "/profile?recipes_page=2" for 127.0.0.1 at 2016-05-31 20:26:56 +0200
+Processing by ProfilesController#show as JS
+  Parameters: {"recipes_page"=>"2"}
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 5 OFFSET 5) subquery_for_count  [["user_id", 3]]
+  [1m[36mRecipe Load (1.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 5[0m  [["user_id", 3]]
+  [1m[35m (4.4ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (64.1ms)
+  [1m[36mRecipe Load (1.6ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (32.0ms)
+  Rendered profiles/show.html.erb within layouts/application (126.6ms)
+  Rendered shared/_navbar.html.erb (10.5ms)
+  Rendered shared/_flashes.html.erb (1.7ms)
+  Rendered shared/_footer.html.erb (1.1ms)
+Completed 200 OK in 275ms (Views: 252.7ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/profile?recipes_page=2" for 127.0.0.1 at 2016-05-31 20:27:02 +0200
+Processing by ProfilesController#show as JS
+  Parameters: {"recipes_page"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 5 OFFSET 5) subquery_for_count  [["user_id", 3]]
+  [1m[36mRecipe Load (1.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 5[0m  [["user_id", 3]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (25.2ms)
+  [1m[36mRecipe Load (1.6ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (22.1ms)
+  Rendered profiles/show.html.erb within layouts/application (64.9ms)
+  Rendered shared/_navbar.html.erb (7.9ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 182ms (Views: 168.1ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/profile?recipes_page=2" for 127.0.0.1 at 2016-05-31 20:27:07 +0200
+Processing by ProfilesController#show as JS
+  Parameters: {"recipes_page"=>"2"}
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 5 OFFSET 5) subquery_for_count  [["user_id", 3]]
+  [1m[36mRecipe Load (0.7ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 5[0m  [["user_id", 3]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (26.0ms)
+  [1m[36mRecipe Load (1.4ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (1.3ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (23.8ms)
+  Rendered profiles/show.html.erb within layouts/application (72.4ms)
+  Rendered shared/_navbar.html.erb (7.0ms)
+  Rendered shared/_flashes.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 190ms (Views: 170.3ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/profile?recipes_page=2" for 127.0.0.1 at 2016-05-31 20:27:09 +0200
+Processing by ProfilesController#show as JS
+  Parameters: {"recipes_page"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (1.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 5 OFFSET 5) subquery_for_count  [["user_id", 3]]
+  [1m[36mRecipe Load (1.4ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 5[0m  [["user_id", 3]]
+  [1m[35m (2.6ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (27.3ms)
+  [1m[36mRecipe Load (1.3ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (21.1ms)
+  Rendered profiles/show.html.erb within layouts/application (70.0ms)
+  Rendered shared/_navbar.html.erb (7.1ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 176ms (Views: 160.1ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/profile?recipes_page=2" for 127.0.0.1 at 2016-05-31 20:27:09 +0200
+Processing by ProfilesController#show as JS
+  Parameters: {"recipes_page"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 5 OFFSET 5) subquery_for_count  [["user_id", 3]]
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 5[0m  [["user_id", 3]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (33.7ms)
+  [1m[36mRecipe Load (1.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (17.8ms)
+  Rendered profiles/show.html.erb within layouts/application (71.9ms)
+  Rendered shared/_navbar.html.erb (9.9ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 218ms (Views: 203.2ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/profile?recipes_page=2" for 127.0.0.1 at 2016-05-31 20:27:09 +0200
+Processing by ProfilesController#show as JS
+  Parameters: {"recipes_page"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 5 OFFSET 5) subquery_for_count  [["user_id", 3]]
+  [1m[36mRecipe Load (0.9ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 5[0m  [["user_id", 3]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (30.2ms)
+  [1m[36mRecipe Load (0.7ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (33.1ms)
+  Rendered profiles/show.html.erb within layouts/application (85.4ms)
+  Rendered shared/_navbar.html.erb (14.5ms)
+  Rendered shared/_flashes.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 214ms (Views: 197.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/profile?recipes_page=2" for 127.0.0.1 at 2016-05-31 20:27:09 +0200
+Processing by ProfilesController#show as JS
+  Parameters: {"recipes_page"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 5 OFFSET 5) subquery_for_count  [["user_id", 3]]
+  [1m[36mRecipe Load (1.5ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 5[0m  [["user_id", 3]]
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (33.0ms)
+  [1m[36mRecipe Load (0.6ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (17.2ms)
+  Rendered profiles/show.html.erb within layouts/application (72.4ms)
+  Rendered shared/_navbar.html.erb (7.1ms)
+  Rendered shared/_flashes.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 183ms (Views: 171.4ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/profile?recipes_page=2" for 127.0.0.1 at 2016-05-31 20:27:10 +0200
+Processing by ProfilesController#show as JS
+  Parameters: {"recipes_page"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 5 OFFSET 5) subquery_for_count  [["user_id", 3]]
+  [1m[36mRecipe Load (0.8ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 5[0m  [["user_id", 3]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (42.5ms)
+  [1m[36mRecipe Load (0.6ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (25.7ms)
+  Rendered profiles/show.html.erb within layouts/application (86.7ms)
+  Rendered shared/_navbar.html.erb (8.7ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 213ms (Views: 202.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/profile?recipes_page=2" for 127.0.0.1 at 2016-05-31 20:27:10 +0200
+Processing by ProfilesController#show as JS
+  Parameters: {"recipes_page"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 5 OFFSET 5) subquery_for_count  [["user_id", 3]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 5[0m  [["user_id", 3]]
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (30.8ms)
+  [1m[36mRecipe Load (0.9ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (19.5ms)
+  Rendered profiles/show.html.erb within layouts/application (66.5ms)
+  Rendered shared/_navbar.html.erb (7.2ms)
+  Rendered shared/_flashes.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 173ms (Views: 159.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/profile?recipes_page=2" for 127.0.0.1 at 2016-05-31 20:27:10 +0200
+Processing by ProfilesController#show as JS
+  Parameters: {"recipes_page"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 5 OFFSET 5) subquery_for_count  [["user_id", 3]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 5[0m  [["user_id", 3]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (26.4ms)
+  [1m[36mRecipe Load (1.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (17.3ms)
+  Rendered profiles/show.html.erb within layouts/application (66.3ms)
+  Rendered shared/_navbar.html.erb (11.3ms)
+  Rendered shared/_flashes.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 196ms (Views: 184.8ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/profile?recipes_page=2" for 127.0.0.1 at 2016-05-31 20:27:11 +0200
+Processing by ProfilesController#show as JS
+  Parameters: {"recipes_page"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 5 OFFSET 5) subquery_for_count  [["user_id", 3]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 5[0m  [["user_id", 3]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (22.7ms)
+  [1m[36mRecipe Load (0.6ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (28.3ms)
+  Rendered profiles/show.html.erb within layouts/application (68.7ms)
+  Rendered shared/_navbar.html.erb (17.1ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 181ms (Views: 170.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/profile?recipes_page=2" for 127.0.0.1 at 2016-05-31 20:27:11 +0200
+Processing by ProfilesController#show as JS
+  Parameters: {"recipes_page"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 5 OFFSET 5) subquery_for_count  [["user_id", 3]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 5[0m  [["user_id", 3]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (33.9ms)
+  [1m[36mRecipe Load (0.6ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (32.5ms)
+  Rendered profiles/show.html.erb within layouts/application (93.6ms)
+  Rendered shared/_navbar.html.erb (6.9ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 228ms (Views: 216.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/profile?recipes_page=2" for 127.0.0.1 at 2016-05-31 20:27:11 +0200
+Processing by ProfilesController#show as JS
+  Parameters: {"recipes_page"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 5 OFFSET 5) subquery_for_count  [["user_id", 3]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 5[0m  [["user_id", 3]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (31.9ms)
+  [1m[36mRecipe Load (0.6ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (23.8ms)
+  Rendered profiles/show.html.erb within layouts/application (70.6ms)
+  Rendered shared/_navbar.html.erb (10.6ms)
+  Rendered shared/_flashes.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 191ms (Views: 170.6ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/profile?recipes_page=2" for 127.0.0.1 at 2016-05-31 20:27:11 +0200
+Processing by ProfilesController#show as JS
+  Parameters: {"recipes_page"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 5 OFFSET 5) subquery_for_count  [["user_id", 3]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 5[0m  [["user_id", 3]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (29.2ms)
+  [1m[36mRecipe Load (0.6ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (24.3ms)
+  Rendered profiles/show.html.erb within layouts/application (70.5ms)
+  Rendered shared/_navbar.html.erb (7.0ms)
+  Rendered shared/_flashes.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 218ms (Views: 199.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/profile?recipes_page=2" for 127.0.0.1 at 2016-05-31 20:27:12 +0200
+Processing by ProfilesController#show as JS
+  Parameters: {"recipes_page"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 5 OFFSET 5) subquery_for_count  [["user_id", 3]]
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 5[0m  [["user_id", 3]]
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (30.2ms)
+  [1m[36mRecipe Load (1.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (39.7ms)
+  Rendered profiles/show.html.erb within layouts/application (88.4ms)
+  Rendered shared/_navbar.html.erb (9.4ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 198ms (Views: 180.7ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2016-05-31 20:27:27 +0200
+Processing by ProfilesController#show as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.9ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 5 OFFSET 0) subquery_for_count  [["user_id", 3]]
+  [1m[36mRecipe Load (0.9ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (44.4ms)
+  [1m[36mRecipe Load (0.8ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY name LIMIT 5 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (34.5ms)
+  Rendered profiles/show.html.erb within layouts/application (92.9ms)
+  Rendered shared/_navbar.html.erb (13.8ms)
+  Rendered shared/_flashes.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 238ms (Views: 204.5ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2016-05-31 20:27:28 +0200
+
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (13.5ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (21.9ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.7ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.3ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (199.4ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2016-05-31 20:27:55 +0200
+Processing by ProfilesController#show as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (1.6ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 3 OFFSET 0) subquery_for_count  [["user_id", 3]]
+  [1m[36mRecipe Load (1.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY name LIMIT 3 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (107.5ms)
+  [1m[36mRecipe Load (6.3ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY name LIMIT 3 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (55.0ms)
+  Rendered profiles/show.html.erb within layouts/application (191.8ms)
+  Rendered shared/_navbar.html.erb (25.6ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (3.2ms)
+Completed 200 OK in 525ms (Views: 345.3ms | ActiveRecord: 25.6ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2016-05-31 20:27:57 +0200
+
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (10.7ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (13.2ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.2ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (154.5ms)
+
+
+Started GET "/profile?recipes_page=2" for 127.0.0.1 at 2016-05-31 20:28:01 +0200
+Processing by ProfilesController#show as JS
+  Parameters: {"recipes_page"=>"2"}
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 3 OFFSET 3) subquery_for_count  [["user_id", 3]]
+  [1m[36mRecipe Load (0.8ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY name LIMIT 3 OFFSET 3[0m  [["user_id", 3]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (94.3ms)
+  [1m[36mRecipe Load (1.4ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY name LIMIT 3 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (40.6ms)
+  Rendered profiles/show.html.erb within layouts/application (159.1ms)
+  Rendered shared/_navbar.html.erb (8.1ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 399ms (Views: 273.8ms | ActiveRecord: 16.4ms)
+
+
+Started GET "/profile?favorites_page=2" for 127.0.0.1 at 2016-05-31 20:28:08 +0200
+Processing by ProfilesController#show as JS
+  Parameters: {"favorites_page"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (2.4ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "recipes" WHERE "recipes"."user_id" = $1 LIMIT 3 OFFSET 0) subquery_for_count  [["user_id", 3]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."user_id" = $1  ORDER BY name LIMIT 3 OFFSET 0[0m  [["user_id", 3]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_recipes.html.erb (35.5ms)
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  ORDER BY name LIMIT 3 OFFSET 3[0m  [["user_id", 3]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "recipes" INNER JOIN "favorite_recipes" ON "recipes"."id" = "favorite_recipes"."recipe_id" WHERE "favorite_recipes"."user_id" = $1  [["user_id", 3]]
+  Rendered profiles/_favorite_recipes.html.erb (24.3ms)
+  Rendered profiles/show.html.erb within layouts/application (78.9ms)
+  Rendered shared/_navbar.html.erb (7.2ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 198ms (Views: 183.6ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-05-31 20:30:42 +0200
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (8.3ms)
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered shared/_navbar.html.erb (31.8ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (1.6ms)
+Completed 200 OK in 152ms (Views: 150.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2016-05-31 20:30:43 +0200
+
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (20.5ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.8ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (9.5ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.8ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (258.9ms)
+
+
+Started GET "/recipes?utf8=%E2%9C%93&search=&commit=Zoek" for 127.0.0.1 at 2016-05-31 20:32:58 +0200
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Zoek"}
+  [1m[35mRecipe Load (1.9ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE (lower(name) LIKE '%%' or lower(course) LIKE '%%' or lower(kitchen) LIKE '%%')  ORDER BY created_at DESC LIMIT 3 OFFSET 0
+  [1m[36m (2.7ms)[0m  [1mSELECT COUNT(*) FROM "recipes" WHERE (lower(name) LIKE '%%' or lower(course) LIKE '%%' or lower(kitchen) LIKE '%%')[0m
+  Rendered recipes/index.html.erb within layouts/application (143.6ms)
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered shared/_navbar.html.erb (99.3ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 399ms (Views: 338.6ms | ActiveRecord: 31.4ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2016-05-31 20:32:59 +0200
+
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (52.5ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.1ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.9ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (295.5ms)
+
+
+Started GET "/recipes?commit=Zoek&page=2&search=&utf8=%E2%9C%93" for 127.0.0.1 at 2016-05-31 20:33:06 +0200
+Processing by RecipesController#index as JS
+  Parameters: {"commit"=>"Zoek", "page"=>"2", "search"=>"", "utf8"=>"✓"}
+  [1m[36mRecipe Load (1.7ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE (lower(name) LIKE '%%' or lower(course) LIKE '%%' or lower(kitchen) LIKE '%%')  ORDER BY created_at DESC LIMIT 3 OFFSET 3[0m
+  [1m[35m (1.3ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE (lower(name) LIKE '%%' or lower(course) LIKE '%%' or lower(kitchen) LIKE '%%')
+  Rendered recipes/index.html.erb within layouts/application (65.6ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered shared/_navbar.html.erb (16.0ms)
+  Rendered shared/_flashes.html.erb (1.9ms)
+  Rendered shared/_footer.html.erb (1.3ms)
+Completed 200 OK in 193ms (Views: 186.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/recipes?commit=Zoek&page=2&search=&utf8=%E2%9C%93" for 127.0.0.1 at 2016-05-31 20:33:07 +0200
+Processing by RecipesController#index as JS
+  Parameters: {"commit"=>"Zoek", "page"=>"2", "search"=>"", "utf8"=>"✓"}
+  [1m[35mRecipe Load (2.0ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE (lower(name) LIKE '%%' or lower(course) LIKE '%%' or lower(kitchen) LIKE '%%')  ORDER BY created_at DESC LIMIT 3 OFFSET 3
+  [1m[36m (1.3ms)[0m  [1mSELECT COUNT(*) FROM "recipes" WHERE (lower(name) LIKE '%%' or lower(course) LIKE '%%' or lower(kitchen) LIKE '%%')[0m
+  Rendered recipes/index.html.erb within layouts/application (66.3ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered shared/_navbar.html.erb (12.4ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 216ms (Views: 210.7ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/recipes?utf8=%E2%9C%93&search=&commit=Zoek" for 127.0.0.1 at 2016-05-31 20:33:16 +0200
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Zoek"}
+  [1m[36mRecipe Load (5.0ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE (lower(name) LIKE '%%' or lower(course) LIKE '%%' or lower(kitchen) LIKE '%%')  ORDER BY created_at DESC LIMIT 3 OFFSET 0[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE (lower(name) LIKE '%%' or lower(course) LIKE '%%' or lower(kitchen) LIKE '%%')
+  Rendered recipes/index.html.erb within layouts/application (123.2ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered shared/_navbar.html.erb (20.4ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 293ms (Views: 284.5ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2016-05-31 20:33:17 +0200
+
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.1ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (11.1ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (19.5ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.7ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (271.1ms)
+
+
+Started GET "/recipes?commit=Zoek&page=2&search=&utf8=%E2%9C%93" for 127.0.0.1 at 2016-05-31 20:33:19 +0200
+Processing by RecipesController#index as HTML
+  Parameters: {"commit"=>"Zoek", "page"=>"2", "search"=>"", "utf8"=>"✓"}
+  [1m[36mRecipe Load (3.8ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE (lower(name) LIKE '%%' or lower(course) LIKE '%%' or lower(kitchen) LIKE '%%')  ORDER BY created_at DESC LIMIT 3 OFFSET 3[0m
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE (lower(name) LIKE '%%' or lower(course) LIKE '%%' or lower(kitchen) LIKE '%%')
+  Rendered recipes/index.html.erb within layouts/application (172.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered shared/_navbar.html.erb (79.7ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 423ms (Views: 352.0ms | ActiveRecord: 19.0ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2016-05-31 20:33:20 +0200
+
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (14.5ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (15.2ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.9ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (14.4ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (374.1ms)
+
+
+Started GET "/recipes?commit=Zoek&page=3&search=&utf8=%E2%9C%93" for 127.0.0.1 at 2016-05-31 20:33:26 +0200
+Processing by RecipesController#index as HTML
+  Parameters: {"commit"=>"Zoek", "page"=>"3", "search"=>"", "utf8"=>"✓"}
+  [1m[35mRecipe Load (1.9ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE (lower(name) LIKE '%%' or lower(course) LIKE '%%' or lower(kitchen) LIKE '%%')  ORDER BY created_at DESC LIMIT 3 OFFSET 6
+  [1m[36m (1.2ms)[0m  [1mSELECT COUNT(*) FROM "recipes" WHERE (lower(name) LIKE '%%' or lower(course) LIKE '%%' or lower(kitchen) LIKE '%%')[0m
+  Rendered recipes/index.html.erb within layouts/application (42.8ms)
+  [1m[35mUser Load (3.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered shared/_navbar.html.erb (17.5ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+  Rendered shared/_footer.html.erb (0.1ms)
+Completed 200 OK in 193ms (Views: 184.3ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2016-05-31 20:33:27 +0200
+
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (14.6ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (35.5ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.3ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (223.5ms)
+
+
+Started GET "/recipes?commit=Zoek&search=&utf8=%E2%9C%93" for 127.0.0.1 at 2016-05-31 20:33:32 +0200
+Processing by RecipesController#index as HTML
+  Parameters: {"commit"=>"Zoek", "search"=>"", "utf8"=>"✓"}
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE (lower(name) LIKE '%%' or lower(course) LIKE '%%' or lower(kitchen) LIKE '%%')  ORDER BY created_at DESC LIMIT 3 OFFSET 0[0m
+  [1m[35m (2.7ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE (lower(name) LIKE '%%' or lower(course) LIKE '%%' or lower(kitchen) LIKE '%%')
+  Rendered recipes/index.html.erb within layouts/application (48.9ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered shared/_navbar.html.erb (18.1ms)
+  Rendered shared/_flashes.html.erb (0.2ms)
+  Rendered shared/_footer.html.erb (0.2ms)
+Completed 200 OK in 169ms (Views: 160.8ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/images/logo.png" for 127.0.0.1 at 2016-05-31 20:33:32 +0200
+
+ActionController::RoutingError (No route matches [GET] "/images/logo.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+  puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+  puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+  puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+  puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+
+
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.6ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (50.1ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (21.3ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (12.4ms)
+  Rendered /home/melchior/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (347.6ms)

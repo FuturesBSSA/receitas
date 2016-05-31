@@ -50,6 +50,6 @@
 </div>
 <% if @recipes.present? %>
 <div class="apple_pagination">
-  <%= will_paginate @recipes, param_name: "recipes_page" %>
+  <%= paginate @recipes, param_name: "recipes_page", :remote => true %>
 </div>
 <% end %>

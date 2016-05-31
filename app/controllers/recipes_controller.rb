@@ -2,9 +2,9 @@ class RecipesController < ApplicationController
   skip_before_action :authenticate_user!
   def index
     if params[:search]
-      @recipes = Recipe.search(params[:search]).page(params[:page]).order("created_at DESC")
+      @recipes = Recipe.search(params[:search]).page(params[:page]).per(3).order("created_at DESC")
     else
-      @recipes = Recipe.page(params[:page]).order('created_at DESC')
+      @recipes = Recipe.page(params[:page]).per(3).order('created_at DESC')
     end
   end
 
@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @user = User.find(@recipe.user_id)
     @full_name = @recipe.user.first_name + " " + @recipe.user.last_name
-    @reviews = @recipe.reviews.page(params[:page]).order('created_at DESC')
+    @reviews = @recipe.reviews.page(params[:page]).per(3).order('created_at DESC')
   end
 
   # Add and remove favorite recipes

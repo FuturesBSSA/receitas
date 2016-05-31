@@ -51,6 +51,6 @@
 </div>
 <% if @favorites.present? %>
 <div class="apple_pagination">
-  <%= will_paginate @favorites, param_name: "favorites_page" %>
+  <%= paginate @favorites, param_name: "favorites_page", :remote => true %>
 </div>
 <% end %>
