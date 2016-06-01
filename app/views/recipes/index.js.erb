@@ -1,0 +1,2 @@
+$('#product-recipe').html('<%= escape_javascript render(@recipes) %>');
+$('#paginator').html('<%= escape_javascript(paginate(@recipes, :remote => true).to_s) %>');

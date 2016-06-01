@@ -1,0 +1,5 @@
+$('#your-recipes').html('<%= escape_javascript render(@recipes) %>');
+$('#paginator2').html('<%= escape_javascript(paginate(@recipes, :remote => true).to_s) %>');
+
+$('#your-favo').html('<%= escape_javascript render(@favorites) %>');
+$('#paginator1').html('<%= escape_javascript(paginate(@favorites, :remote => true).to_s) %>');

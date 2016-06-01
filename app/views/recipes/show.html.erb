@@ -139,7 +139,7 @@
   </div>
   <% if @reviews.present? %>
   <div class="apple_pagination">
-    <%= paginate @reviews, remote: true %>
+    <%= paginate @reviews, :remote => true %>
   </div>
   <% end %>
 </div>

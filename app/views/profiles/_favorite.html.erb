@@ -1,5 +1,5 @@
 <div class="container is-small">
-  <% @recipes.each do |recipe| %>
+  <% @favorites.each do |recipe| %>
   <div class="product">
     <div class='product-upvote'>
       <div class="product-arrow"></div>
@@ -47,9 +47,6 @@
     </ul>
   </div>
   <% end %>
+
 </div>
-<% if @recipes.present? %>
-<div class="apple_pagination">
-  <%= paginate @recipes, param_name: "recipes_page", :remote => true %>
-</div>
-<% end %>
+

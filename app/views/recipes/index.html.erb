@@ -7,70 +7,15 @@
 </div>
 
 
-<div class="container is-medium">
+<div class="container is-medium" id="product-recipe">
 
   <h3 class="text-center">Zoek resultaten</h3>
-
-  <% if @recipes.present? %>
-  <% @recipes.each do |recipe| %>
-  <div class="product">
-    <div class='product-upvote hidden-xs'>
-      <div class="product-arrow"></div>
-      <div class='product-count'>95</div>
-    </div>
-    <%= link_to recipe_path(recipe) do %>
-      <% if recipe.photo.present? %>
-      <%= cl_image_tag recipe.photo, height: 150, width: 200, crop: :fill, class: "product-image hidden-xs" %>
-      <% else %>
-      <%= image_tag "http://ingridwu.dmmdmcfatter.com/wp-content/uploads/2015/01/placeholder.png",height: 150, width: 200, crop: :fill, class: "product-image hidden-xs"%>
-    <% end %>
-      <% end %>
-    <div class='product-body'>
-      <h3><%= recipe.name  %></h3>
-      <div class="summary">
-        <p><%= recipe.summary %></p>
-      </div>
-
-      <div class="recipes-info">
-        <div class="recipes-kitchen">
-          <p>Gang</p>
-          <h5> <%= recipe.course %> </h5>
-        </div>
-
-        <div class="recipes-kitchen">
-          <p>Keuken</p>
-          <h5> <%= recipe.kitchen %> </h5>
-        </div>
-
-        <div class="cooking-time">
-          <p>Kooktijd</p>
-          <h5><%= recipe.cooking_time %> min</h5>
-        </div>
-
-        <div class="created">
-          <p>Geplaatst op</p>
-          <h5><%= recipe.created_at.strftime('%d/%m/%Y') %> </h5>
-        </div>
-      </div>
-    </div>
-
-   <!--  <ul class="list-inline product-controls">
-      <li><a href=""><i class="fa fa-heart"></i></a></li>
-      <li><a href=""><i class="fa fa-share"></i></a></li>
-    </ul> -->
-
-  </div>
-  <% end %>
-  <% else %>
-  <div class="text-center">
-    <p>Er zijn geen recepten gevonden die de zoekterm <strong><%= params[:search] %></strong> bevatten.</p>
-  </div>
-  <% end %>
+  <%= render @recipes %>
 </div>
 
 <% if @recipes.present? %>
-  <div class="apple_pagination">
-    <%= paginate @recipes %>
+  <div class="apple_pagination" id="paginator">
+    <%= paginate @recipes, :remote => true %>
   </div>
 <% end %>
 

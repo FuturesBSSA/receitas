@@ -34,12 +34,18 @@
 </div>
 
 <div class="tab-content" id="your-recipes">
-  <%= render "recipes" %>
+  <%= render @recipes %>
 </div>
 
 
 <div class="tab-content hidden" id="your-favo">
-  <%= render "favorite_recipes" %>
+  <%= render @favorites %>
 </div>
+
+<% if @favorites.present? %>
+<div class="apple_pagination" id="paginator1">
+  <%= paginate @favorites, param_name: "favorites_page", :remote => true %>
+</div>
+<% end %>
 
 
