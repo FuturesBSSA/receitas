@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @user = User.find(@recipe.user_id)
     @full_name = @recipe.user.first_name + " " + @recipe.user.last_name
-    @reviews = @recipe.reviews.page(params[:page]).per(3).order('created_at DESC')
+    @reviews = @recipe.reviews.order('created_at DESC').page(params[:page]).per(3)
   end
 
   # Add and remove favorite recipes

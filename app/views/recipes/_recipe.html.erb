@@ -1,5 +1,4 @@
 <% if @recipes.present? %>
-  <% @recipes.each do |recipe| %>
   <div class="product">
     <div class='product-upvote hidden-xs'>
       <div class="product-arrow"></div>
@@ -47,7 +46,6 @@
     </ul> -->
 
   </div>
-  <% end %>
   <% else %>
   <div class="text-center">
     <p>Er zijn geen recepten gevonden die de zoekterm <strong><%= params[:search] %></strong> bevatten.</p>

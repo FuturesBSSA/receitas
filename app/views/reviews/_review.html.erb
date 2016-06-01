@@ -1,7 +1,6 @@
 <% if @recipe.reviews.blank? %>
   Geef als eerste een recensie over <%= @recipe.name %>
 <% else %>
-  <% @reviews.each do |review| %>
     <div class="review">
       <div class="review-image">
         <%= cl_image_tag review.user.photo, height: 50, width: 50, crop: :fill, class: "thumbnail" %>
@@ -24,5 +23,4 @@
         </div>
       </div>
     </div>
-  <% end %>
 <% end %>
