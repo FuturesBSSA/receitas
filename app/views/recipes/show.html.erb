@@ -33,7 +33,7 @@
           <%= cl_image_tag @recipe.photo, height: 250, width: 300, crop: :fill %>
         </div>
 
-          <h4>Ingrediënten</h4>
+        <h4>Ingrediënten</h4>
         <div class="ingredients">
           <div class="ingredient-info text-left">
             <% @recipe.ingredients.each do |ingredient| %>
@@ -126,20 +126,15 @@
           <%= render 'reviews/new', restaurant: @restaurant, review: @review %>
           <% end %>
         </div>
-
-        <% if @recipe.reviews.blank? %>
-        Geef als eerste een recensie over <%= @recipe.name %>
-        <% else %>
-        <% @reviews.each do |review| %>
-        <%= render 'reviews/show', review: review %>
-        <% end %>
-        <% end %>
+        <div id="review">
+        <%= render @reviews %>
+        </div>
       </div>
     </div>
   </div>
-  <% if @reviews.present? %>
-  <div class="apple_pagination">
-    <%= paginate @reviews, :remote => true %>
-  </div>
-  <% end %>
 </div>
+<% if @reviews.present? %>
+<div class="apple_pagination" id="paginator-review">
+  <%= paginate @reviews, :remote => true %>
+</div>
+<% end %>

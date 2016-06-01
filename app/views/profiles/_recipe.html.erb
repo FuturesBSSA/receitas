@@ -48,8 +48,3 @@
   </div>
   <% end %>
 </div>
-<% if @recipes.present? %>
-<div class="apple_pagination" id="paginator2">
-  <%= paginate @recipes, param_name: "recipes_page", :remote => true %>
-</div>
-<% end %>

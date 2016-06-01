@@ -2,9 +2,9 @@ class RecipesController < ApplicationController
   skip_before_action :authenticate_user!
   def index
     if params[:search]
-      @recipes = Recipe.search(params[:search]).page(params[:page]).per(3).order("created_at DESC")
+      @recipes = Recipe.search(params[:search]).order('created_at DESC').page(params[:page]).per(3)
     else
-      @recipes = Recipe.page(params[:page]).per(3).order('created_at DESC')
+      @recipes = Recipe.order('created_at DESC').page(params[:page]).per(3)
     end
   end
 

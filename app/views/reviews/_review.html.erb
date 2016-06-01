@@ -1,0 +1,28 @@
+<% if @recipe.reviews.blank? %>
+  Geef als eerste een recensie over <%= @recipe.name %>
+<% else %>
+  <% @reviews.each do |review| %>
+    <div class="review">
+      <div class="review-image">
+        <%= cl_image_tag review.user.photo, height: 50, width: 50, crop: :fill, class: "thumbnail" %>
+        <div class="review-user">
+          <p><%= review.user.first_name %></p>
+        </div>
+      </div>
+      <div class="review-body dont-break-out">
+        <% review.rating.times do %>
+        <i class="fa fa-star"></i>
+        <% end %>
+        <% (5 - review.rating).times do %>
+        <i class="fa fa-star-o"></i>
+        <% end %>
+        <div class="review-content">
+          <p><%= review.content %></p>
+        </div>
+        <div class="review-date">
+          <p> <%= review.created_at.strftime('%d/%m/%Y') %> </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
