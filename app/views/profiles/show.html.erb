@@ -38,9 +38,9 @@
     <%= render @recipes %>
 
     <% if @recipes.present? %>
-    <div class="apple_pagination" id="paginator-my-recipes">
-    <%= paginate @recipes, :param_name => :recipes_page, :remote => true %>
-    </div>
+      <div class="apple_pagination" id="paginator-my-recipes">
+        <%= paginate @recipes, :remote => true, :param_name => :recipes_page %>
+      </div>
     <% end %>
   </div>
 </div>
@@ -50,9 +50,9 @@
     <%= render @favorites %>
 
     <% if @favorites.present? %>
-    <div class="apple_pagination" id="paginator-my-favo">
-      <%= paginate @favorites, :param_name => :favorites_page, :remote => true %>
-    </div>
+      <div class="apple_pagination" id="paginator-my-favo">
+        <%= paginate @favorites, :remote => true, :param_name => :favorites_page %>
+      </div>
     <% end %>
   </div>
 </div>
