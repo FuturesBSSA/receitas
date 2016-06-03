@@ -3,15 +3,15 @@
       <div class="product-arrow"></div>
       <div class='product-count'>95</div>
     </div>
-    <%= link_to recipe_path(recipe) do %>
       <% if recipe.photo.present? %>
       <%= cl_image_tag recipe.photo, height: 150, width: 200, crop: :fill, class: "product-image hidden-xs" %>
       <% else %>
       <%= image_tag "http://ingridwu.dmmdmcfatter.com/wp-content/uploads/2015/01/placeholder.png",height: 150, width: 200, crop: :fill, class: "product-image hidden-xs"%>
-    <% end %>
       <% end %>
     <div class='product-body'>
+    <%= link_to recipe_path(recipe) do %>
       <h3><%= recipe.name  %></h3>
+    <% end %>
       <div class="summary">
         <p><%= recipe.summary %></p>
       </div>

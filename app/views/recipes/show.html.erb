@@ -4,6 +4,8 @@
     <h2 class="text-center"><%= @recipe.name %></h2>
     <p> Gemaakt door <%= @recipe.user.first_name %></p>
     <%= image_tag @recipe.user.photo, class: "avatar-large" %>
+    <% if current_user %>
+
     <% if current_user.favorites.exists?(id: @recipe.id) %>
     <ul class="list-inline product-controls">
       <%= link_to favorite_recipe_path(@recipe, type: "unfavorite"), method: :put do %>
@@ -16,6 +18,7 @@
       <li><i class="fa fa-heart"></i></li>
       <% end %>
     </ul>
+    <% end %>
     <% end %>
   </div>
 
