@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
 
   mount_uploader :photo, PhotoUploader
 
-  def confirmation_required?
-      false
-  end
+  # def confirmation_required?
+  #     false
+  # end
 end
