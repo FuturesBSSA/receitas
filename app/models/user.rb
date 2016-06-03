@@ -14,4 +14,8 @@ class User < ActiveRecord::Base
   validates :first_name, :last_name, presence: true
 
   mount_uploader :photo, PhotoUploader
+
+  def confirmation_required?
+      false
+  end
 end

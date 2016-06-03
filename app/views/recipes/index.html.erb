@@ -10,13 +10,19 @@
 <div class="container is-medium" id="product-recipe">
 
   <h3 class="text-center">Zoek resultaten</h3>
-  <%= render @recipes %>
+  <% if @recipes.present? %>
+    <%= render @recipes %>
+  <% else %>
+    <div class="text-center">
+      <p>Er zijn geen recepten gevonden die de zoekterm <strong><%= params[:search] %></strong> bevatten.</p>
+    </div>
+  <% end %>
 </div>
 
 <% if @recipes.present? %>
-  <div class="apple_pagination" id="paginator">
-    <%= paginate @recipes, :remote => true %>
-  </div>
+<div class="apple_pagination" id="paginator">
+  <%= paginate @recipes, :remote => true %>
+</div>
 <% end %>
 
 
