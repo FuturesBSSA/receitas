@@ -1,6 +1,6 @@
 <%  @kitchen = ['Belgisch', 'Chinees', 'Frans', 'Grieks', 'Indonesisch', 'Indiaas', 'Italiaans', 'Japans', 'Marokkaans', 'Midden-Oosters', 'Mexicaans', 'Nederlands', 'Portugees', 'Spaans', 'Thais', 'Turks', 'Zweeds'] %>
 <div class="form-background">
-  <div class="container is-small">
+  <div class="container is-small new-recipe">
 
     <div class="text-center">
      <div class="row">
@@ -33,7 +33,7 @@
 
 
         <hr style="width: 20em;">
-        <%= f.button :submit, class: "btn btn-success" %>
+        <%= f.submit "Voeg toe", class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>
