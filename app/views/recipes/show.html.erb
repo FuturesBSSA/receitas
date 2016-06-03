@@ -5,19 +5,19 @@
     <p> Gemaakt door <%= @recipe.user.first_name %></p>
     <%= image_tag @recipe.user.photo, class: "avatar-large" %>
     <% if current_user %>
-      <% if current_user.favorites.exists?(id: @recipe.id) %>
-      <ul class="list-inline product-controls">
-        <%= link_to favorite_recipe_path(@recipe, type: "unfavorite"), method: :put do %>
-        <li><i class="fa fa-heart"></i></li>
-        <% end %>
-      </ul>
-      <% else %>
-      <ul class="list-inline product-controls">
-        <%= link_to favorite_recipe_path(@recipe, type: "favorite"), method: :put do %>
-        <li><i class="fa fa-heart"></i></li>
-        <% end %>
-      </ul>
+    <% if current_user.favorites.exists?(id: @recipe.id) %>
+    <ul class="list-inline product-controls">
+      <%= link_to favorite_recipe_path(@recipe, type: "unfavorite"), method: :put do %>
+      <li><i class="fa fa-heart"></i></li>
       <% end %>
+    </ul>
+    <% else %>
+    <ul class="list-inline product-controls">
+      <%= link_to favorite_recipe_path(@recipe, type: "favorite"), method: :put do %>
+      <li><i class="fa fa-heart"></i></li>
+      <% end %>
+    </ul>
+    <% end %>
     <% end %>
   </div>
 
@@ -121,16 +121,20 @@
 
     <div id="reviews">
       <div class="review-container">
+        <% if user_signed_in? %>
         <div id="review-button", class="btn btn-success">
           Geef uw review
         </div>
+        <% end %>
         <div id="give-review">
-          <% if user_signed_in? %>
           <%= render 'reviews/new', restaurant: @restaurant, review: @review %>
-          <% end %>
         </div>
         <div id="review">
-        <%= render @reviews %>
+          <% if @recipe.reviews.blank? %>
+            Geef als eerste een recensie over <strong><%= @recipe.name %></strong>
+          <% else %>
+            <%= render @reviews %>
+          <% end %>
         </div>
       </div>
     </div>
