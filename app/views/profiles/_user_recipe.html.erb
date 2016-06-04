@@ -1,0 +1,46 @@
+  <div class="product" id="product-recipe">
+    <div class='product-upvote'>
+      <div class="product-arrow"></div>
+      <div class='product-count'>95</div>
+    </div>
+    <% if recipe.photo != nil %>
+    <%= cl_image_tag recipe.photo, height: 100, width: 150, crop: :fill, class: "product-image hidden-xs" %>
+    <% else %>
+    <% end %>
+    <div class='product-body'>
+      <%= link_to recipe_path(recipe) do %>
+      <h4><%= recipe.name  %></h4>
+      <% end %>
+      <div class="summary dont-break-out">
+        <p><%= user.recipe.summary %></p>
+      </div>
+
+      <div class="recipes-info">
+        <div class="recipes-kitchen">
+          <p>Gang</p>
+          <h5> <%= user.recipe.course %> </h5>
+        </div>
+
+        <div class="recipes-kitchen">
+          <p>Keuken</p>
+          <h5> <%= user.recipe.kitchen %> </h5>
+        </div>
+
+        <div class="cooking-time">
+          <p>Kooktijd</p>
+          <h5><%= user.recipe.cooking_time %> min</h5>
+        </div>
+
+        <div class="created">
+          <p>Geplaatst op</p>
+          <h5><%= user.recipe.created_at.strftime('%d/%m/%Y') %> </h5>
+        </div>
+      </div>
+    </div>
+    <ul class="list-inline product-controls">
+      <li><%= link_to edit_users_recipe_path(recipe) do %>
+            <i class="fa fa-edit"></i>
+          <% end %>
+      </li>
+    </ul>
+  </div>

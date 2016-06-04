@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
   def show
     @fullname = current_user.first_name + " " + current_user.last_name
-    @recipes = current_user.recipes.order("name").page(params[:recipes_page]).per(3)
+    @user_recipes = current_user.recipes.order("name").page(params[:recipes_page]).per(3)
     @favorites = current_user.favorites.order("name").page(params[:favorites_page]).per(3)
   end
 

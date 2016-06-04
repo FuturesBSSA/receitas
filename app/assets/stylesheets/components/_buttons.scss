@@ -19,18 +19,26 @@
 
 
 .tabs {
-  background: black;
+  background: #03030A;
   text-align: center;
   display: flex;
   padding: 20px;
   justify-content: center;
   align-items: center;
-  border-radius: 10px 10px 0 0;
-  position: absolute;
+  border-radius: 0 0 10px 10px;
   bottom: 0px;
   left: 30%;
-  width: 500px;
+  margin-bottom: 20px;
 }
+
+@media(max-width: 600px) {
+  .tabs {
+    flex-flow: column;
+  }
+}
+
+
+
 .your-recipes-btn {
   color: white;
   padding-right: 15px;
