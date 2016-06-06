@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  before_action :authenticate_user!
   def show
     @fullname = current_user.first_name + " " + current_user.last_name
     @recipes = current_user.recipes.order("name").page(params[:recipes_page]).per(3)
