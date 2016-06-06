@@ -4,7 +4,7 @@
 
     <p>hello <%= @fullname %></p>
 
-    <% if @user_recipes.size < 5 %>
+    <% if @recipes.size < 5 %>
     <p>Beginner</p>
     <% end %>
 
@@ -36,15 +36,15 @@
 
 <div class="tab-content" id="your-recipes">
   <div class="container is-small sand-color">
-    <% if @user_recipes.present? %>
-     <%= render @user_recipes %>
+    <% if @recipes.present? %>
+     <%= render @recipes %>
     <% else %>
      <h4 class="text-center">Maak je eigen recepten</h4>
     <% end %>
   </div>
-    <% if @user_recipes.present? %>
+    <% if @recipes.present? %>
       <div class="apple_pagination" id="paginator-my-recipes">
-        <%= paginate @user_recipes, :remote => true, :param_name => :recipes_page %>
+        <%= paginate @recipes, :remote => true, :param_name => :recipes_page %>
       </div>
     <% end %>
 </div>
