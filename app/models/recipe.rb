@@ -16,9 +16,6 @@ class Recipe < ActiveRecord::Base
 
   def self.search(search)
     where("lower(name) LIKE ? or lower(course) LIKE ? or lower(kitchen) LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
-    # where("lower(course) LIKE ?", "%#{search}%")
-    # where("lower(kitchen) LIKE ?", "%#{search}%")
   end
 
-  # WillPaginate.per_page = 2
 end
