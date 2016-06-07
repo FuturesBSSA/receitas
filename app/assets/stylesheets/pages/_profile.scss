@@ -1,7 +1,10 @@
 .banner-profile {
   // background: linear-gradient(to left, #70e1f5 , #ffd194);
-  background: linear-gradient(to left, #F0C27B , #A44A3F);
-  height: 50vh;
+  // background: linear-gradient(to left, #F0C27B , #A44A3F);
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), asset-url("mountain_view.jpg");
+  height: 60vh;
+  background-size: cover !important;
+  background-position: center center;
   display: flex;
   align-items: center;
   text-align: center;
