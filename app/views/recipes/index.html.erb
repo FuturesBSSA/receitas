@@ -2,7 +2,14 @@
   <div class="index-info">
 
     <h1>Alle beschikbare recepten</h1>
-    <p>Selecteer op categorie, keuken en gang</p>
+    <p>Zoek op naam, keuken en gang</p>
+     <div class="form-width">
+        <%= form_tag recipes_path, method: "get", class: "flex-form" do %>
+        <!-- <span class="fa fa-search icon-right"></span> -->
+        <%= text_field_tag :search, params[:search], placeholder: "Wat vind je lekker?" %>
+        <%= submit_tag("Zoek") %>
+        <% end %>
+      </div>
   </div>
 </div>
 
