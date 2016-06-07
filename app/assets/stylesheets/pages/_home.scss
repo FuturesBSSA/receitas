@@ -1,5 +1,5 @@
 .banner-home {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url("http://gorgeoustalk.com/wp-content/uploads/2015/01/woman_cooking1.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), asset-url("Hair_in_the_Sunset_Light_1920x1080.jpg");
   height: 110vh;
   background-position: center center;
   display: flex;
@@ -7,6 +7,7 @@
   text-align: center;
   position: relative;
   background-size: cover !important;
+  color: white;
 }
 
 
