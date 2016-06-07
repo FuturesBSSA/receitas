@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :recipes
   has_many :reviews
+  has_many :votes, dependent: :destroy
 
 # Favorite recipes of user
   has_many :favorite_recipes # just the 'relationships'

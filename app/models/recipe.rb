@@ -2,6 +2,7 @@ class Recipe < ActiveRecord::Base
   belongs_to :user
   has_many :ingredients, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :votes, dependent: :destroy
 
   # Favorited by users
   has_many :favorite_recipes # just the 'relationships'
