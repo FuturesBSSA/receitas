@@ -1,5 +1,7 @@
 class RecipesController < ApplicationController
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :find_recipe, only: [:favorite, :upvote]
+
   def index
     if params[:search]
       @recipes = Recipe.search(params[:search]).order('created_at DESC').page(params[:page]).per(3)
@@ -19,7 +21,6 @@ class RecipesController < ApplicationController
   # Add and remove favorite recipes
   # for current_user
   def favorite
-    @recipe = Recipe.find(params[:id])
     type = params[:type]
     if type == "favorite"
       current_user.favorites << @recipe
@@ -34,4 +35,22 @@ class RecipesController < ApplicationController
       redirect_to :back, notice: 'Nothing happened.'
     end
   end
+
+  # Add and remove vote
+  # for current_user
+  def upvote
+    # you can upvote only once
+    if !@recipe.votes.where(user: current_user).exists?
+      @recipe.votes.where(user: current_user).first_or_create
+    else
+    # you can take your upvote back
+      current_user.votes.where(user: current_user)
+      @recipe.votes.where(user: current_user).first.destroy
+    end
+  end
+
+  private
+    def find_recipe
+      @recipe = Recipe.find(params[:id])
+    end
 end

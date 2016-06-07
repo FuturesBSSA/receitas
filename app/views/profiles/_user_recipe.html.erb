@@ -1,8 +1,7 @@
   <div class="product" id="product-recipe2">
     <div class='product-upvote'>
-      <div class="product-arrow"></div>
-      <div class='product-count'>95</div>
-    </div>
+      <%= render 'recipes/recipe_upvote', recipe: recipe %>
+    </div
     <% if recipe.photo != nil %>
     <%= cl_image_tag recipe.photo, height: 100, width: 150, crop: :fill, class: "product-image hidden-xs" %>
     <% else %>

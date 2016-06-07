@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+  <%= link_to upvote_recipe_path(recipe), remote: true, method: :patch, class: "recipe-upvote recipe-upvote-#{recipe.id}" do %>
+    <div class="product-arrow"></div>
+    <div class='product-count'>
+      <%= (recipe.votes.count)%>
+    </div>
+  <% end %>
+<% else  %>
+    <div class="product-arrow"></div>
+    <div class='product-count'>
+      <%= (recipe.votes.count)%>
+    </div>
+<% end %>

@@ -6,7 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
+User.destroy_all
+Recipe.destroy_all
 
 lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida eleifend erat aliquam pretium. Nulla non felis purus. Cras volutpat pulvinar lectus, efficitur vestibulum mauris cursus sed. Praesent et iaculis sapien, vitae ultricies eros. Ut quis nibh a sem commodo consectetur. Integer accumsan eros mattis augue imperdiet congue. Nam nec sapien condimentum, ullamcorper nulla eu, imperdiet augue. Donec pharetra quam et nulla porta ultricies. Maecenas ornare ex quis tortor sagittis, ut dapibus est vestibulum. Aenean molestie libero et nisl efficitur, in porttitor lacus ultrices. Ut sit amet urna a quam vehicula maximus. Ut id leo vel quam eleifend ullamcorper a eu quam. Aenean a facilisis justo, non fringilla nibh. Pellentesque mollis, lorem ac convallis laoreet, ante dui auctor massa, nec placerat magna velit in mi. Sed consequat, libero sed volutpat blandit, ligula turpis ullamcorper orci, sit amet tincidunt quam sapien a justo.
 

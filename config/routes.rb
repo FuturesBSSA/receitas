@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   resources :recipes, only: [:index, :show] do
     put :favorite, on: :member
     resources :reviews, only: [:create, :new]
+
+    member do
+      patch :upvote
+    end
   end
 
 
