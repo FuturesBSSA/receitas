@@ -13,8 +13,7 @@
         <%= simple_form_for([:users, @recipe]) do |f| %>
         <%= f.error_notification %>
         <%= f.input :name, :label => "Recept naam" %>
-        <%= f.input :summary, hint: "max 30 tekens", :label => "Samenvatting", placeholder: "Geeft een korte samenvatting
-bv. Een zomers gerecht met kip" %>
+        <%= f.input :summary, hint: "max 30 tekens", :label => "Samenvatting", placeholder: "Geeft een korte samenvatting. bv: Een zomers gerecht met kip" %>
         <%= f.input :course, :label => "Gang", placeholder: "Voor, Na of Hoofdgerecht" %>
         <%= f.input :kitchen, :label => "Keuken", :collection => @kitchen %>
         <%= f.input :category, :label => "Categorie", :collection => @category %>
@@ -33,7 +32,7 @@ bv. Een zomers gerecht met kip" %>
           </div>
         </div>
         <br>
-        <%= f.input :description, :label => "Beschrijving" %>
+        <%= f.input :description, :label => "Beschrijving", placeholder: "Geef uitleg over het recept." %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
 
