@@ -2,7 +2,7 @@
   <div class="index-info">
 
     <h1>Alle beschikbare recepten</h1>
-    <p>Zoek op naam, keuken en gang</p>
+    <p>Zoek op naam, seizoen, keuken en gang</p>
      <div class="form-width">
         <%= form_tag recipes_path, method: "get", class: "flex-form" do %>
         <%= text_field_tag :search, params[:search], placeholder: "Wat vind je lekker?" %>

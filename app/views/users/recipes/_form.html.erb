@@ -1,4 +1,6 @@
 <%  @kitchen = ['Belgisch', 'Brits', 'Chinees', 'Frans', 'Grieks', 'Indonesisch', 'Indiaas', 'Italiaans', 'Japans', 'Marokkaans', 'Midden-Oosters', 'Mexicaans', 'Nederlands', 'Portugees', 'Scandinavisch' 'Spaans', 'Thais', 'Turks'] %>
+<% @season = ['Zomer', 'Herfst', 'Winter', 'Lente'] %>
+<% @category = ['Vis', 'Vlees','Vegetarisch'] %>
 <div class="form-background">
   <div class="container is-small new-recipe">
 
@@ -11,10 +13,14 @@
         <%= simple_form_for([:users, @recipe]) do |f| %>
         <%= f.error_notification %>
         <%= f.input :name, :label => "Recept naam" %>
-        <%= f.input :summary, hint: "max 30 tekens", :label => "Samenvatting" %>
+        <%= f.input :summary, hint: "max 30 tekens", :label => "Samenvatting", placeholder: "Geeft een korte samenvatting
+bv. Een zomers gerecht met kip" %>
         <%= f.input :course, :label => "Gang", placeholder: "Voor, Na of Hoofdgerecht" %>
         <%= f.input :kitchen, :label => "Keuken", :collection => @kitchen %>
+        <%= f.input :category, :label => "Categorie", :collection => @category %>
+        <%= f.input :season, :label => "Seizoen", :collection => @season %>
         <br>
+        <%= f.input :number_of_persons, :label => "Aantal personen" %>
         <%= f.input :prep_time, :label => "Voorbereidingstijd" %>
         <%= f.input :cooking_time, :label => "Kooktijd" %>
         <br>
