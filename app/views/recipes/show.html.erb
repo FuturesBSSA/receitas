@@ -1,11 +1,7 @@
 <div class="banner-show" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url(<%= cl_image_path @recipe.photo, height: 400, width: 1200, crop: :fill %>) ">
 
-  <div class="recipe-name">
-    <h2 class="text-center"><%= @recipe.name %></h2>
-    <p> Gemaakt door <%= @recipe.user.first_name %></p>
-    <div class="user-avatar">
-      <%= image_tag @recipe.user.photo, class: "avatar-large" %>
-    </div>
+  <div class="recipe-name text-center">
+    <h2><%= @recipe.name %></h2>
     <% if current_user %>
       <% if current_user.favorites.exists?(id: @recipe.id) %>
       <ul class="list-inline product-controls">
@@ -21,6 +17,12 @@
       </ul>
       <% end %>
     <% end %>
+
+    <p> Gemaakt door <%= @recipe.user.first_name %></p>
+    <div class="user-avatar">
+      <%= image_tag @recipe.user.photo, class: "avatar-large" %>
+    </div>
+
   </div>
 </div>
 
@@ -33,14 +35,17 @@
         </div>
 
         <h4>Ingrediënten</h4>
+          <div class="persons">
+            <i class="fa fa-users"> <%= @recipe.number_of_persons %> personen </i>
+          </div>
         <div class="ingredients">
           <div class="ingredient-info text-left">
             <% @recipe.ingredients.each do |ingredient| %>
-            <p>
+            <ul>
               <%= ingredient.quantity %>
               <%= ingredient.unit  %>
               <%= ingredient.name  %>
-            </p>
+            </ul>
             <% end %>
           </div>
         </div>
