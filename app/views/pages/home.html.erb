@@ -33,7 +33,7 @@
         <div class="recipe-small">
           <h2> Voorgerechten</h2>
         </div>
-        <%= link_to "Voorgerechten", recipes_path(course: "Voorgerecht"), class: "card-link" %>
+        <%= link_to "Voorgerechten", recipes_path(search: "voorgerecht"), class: "card-link" %>
       </div>
     </div>
 
@@ -42,7 +42,7 @@
         <div class="recipe-small">
           <h2>Hoofdgerechten</h2>
         </div>
-        <%= link_to "Hoofdgerechten", recipes_path(course: "Hoofdgerecht"), class: "card-link" %>
+        <%= link_to "Hoofdgerechten", recipes_path(search: "hoofdgerecht"), class: "card-link" %>
       </div>
     </div>
 
@@ -51,7 +51,7 @@
         <div class="recipe-small">
           <h2>Nagerechten</h2>
         </div>
-        <%= link_to "Nagerechten", recipes_path(course: "Nagerecht"), class: "card-link" %>
+        <%= link_to "Nagerechten", recipes_path(search: "nagerecht"), class: "card-link" %>
       </div>
     </div>
   </div>
@@ -60,18 +60,18 @@
     <div class="col-xs-12 col-sm-6">
       <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(http://www.lelacbleu.nl/wp-content/uploads/72030742-e1425996486622-851x478.jpg);">
         <div class="recipe-large">
-          <h2>Frans</h2>
+          <h2>Lente</h2>
         </div>
-        <%= link_to "Frans", recipes_path(kitchen: "Frans"), class: "card-link" %>
+        <%= link_to "Lente", recipes_path(search: "lente"), class: "card-link" %>
       </div>
     </div>
 
     <div class="col-xs-12 col-sm-6">
       <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(http://www.cosimo.be/gallipoli/sites/default/files/Pizza-Napoletana-klein.jpg);">
         <div class="recipe-large">
-          <h2>Italiaans</h2>
+          <h2>Zomer</h2>
         </div>
-        <%= link_to "Italiaans", recipes_path(kitchen: "Italiaans"), class: "card-link" %>
+        <%= link_to "Zomer", recipes_path(search: "zomer"), class: "card-link" %>
       </div>
     </div>
   </div>
