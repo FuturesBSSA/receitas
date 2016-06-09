@@ -5,8 +5,8 @@ class Recipe < ActiveRecord::Base
   has_many :votes, dependent: :destroy
 
   # Favorited by users
-  has_many :favorite_recipes # just the 'relationships'
-  has_many :favorited_by, through: :favorite_recipes, source: :user # the actual users favoriting a recipe
+  has_many :favorite_recipes, dependent: :destroy # just the 'relationships'
+  has_many :favorited_by, through: :favorite_recipes, source: :user, dependent: :destroy # the actual users favoriting a recipe
 
   validates :name, :summary, :course, :kitchen, :photo, :description, presence: true
   validates :summary, length: { maximum: 80 }
