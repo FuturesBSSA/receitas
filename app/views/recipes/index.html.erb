@@ -13,9 +13,9 @@
 </div>
 
 
-<div class="container is-small" id="product-recipe">
+<div class="container is-small sand-color" id="product-recipe">
   <% if @recipes.present? %>
-  <h3 class="text-center">Gevonden resultaten voor <strong><%= params[:search] %></strong></h3>
+  <h4 class="text-center">Gevonden resultaten voor <strong><%= params[:search] %></strong></h4>
     <%= render @recipes %>
   <% else %>
     <div class="text-center">
