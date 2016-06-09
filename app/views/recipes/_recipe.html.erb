@@ -28,9 +28,7 @@
 
         <div class="cooking-time">
           <p>Bereiding</p>
-          <% @prep = 0 %>
-          <%@prep = recipe.prep_time.to_i + recipe.cooking_time.to_i%>
-          <h5><%= @prep %> min</h5>
+          <h5><%= recipe.prep_time %> min</h5>
         </div>
 
         <div class="created">
