@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   has_many :favorite_recipes # just the 'relationships'
   has_many :favorites, through: :favorite_recipes, source: :recipe, dependent: :destroy # the actual recipes a user favorites
 
-  validates :first_name, :last_name, presence: true
+  validates :first_name, :last_name, :photo, presence: true
 
   mount_uploader :photo, PhotoUploader
 
