@@ -4,9 +4,9 @@ class RecipesController < ApplicationController
 
   def index
     if params[:search]
-      @recipes = Recipe.search(params[:search]).order('created_at DESC').page(params[:page]).per(3)
+      @recipes = Recipe.search(params[:search]).order('created_at DESC').page(params[:page]).per(8)
     else
-      @recipes = Recipe.order('created_at DESC').page(params[:page]).per(3)
+      @recipes = Recipe.order('created_at DESC').page(params[:page]).per(8)
     end
   end
 
@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @user = User.find(@recipe.user_id)
     @full_name = @recipe.user.first_name + " " + @recipe.user.last_name
-    @reviews = @recipe.reviews.order('created_at DESC').page(params[:page]).per(3)
+    @reviews = @recipe.reviews.order('created_at DESC').page(params[:page]).per(5)
   end
 
   # Add and remove favorite recipes

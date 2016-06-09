@@ -2,8 +2,8 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!
   def show
     @fullname = current_user.first_name + " " + current_user.last_name
-    @recipes = current_user.recipes.order("name").page(params[:recipes_page]).per(3)
-    @favorites = current_user.favorites.order("name").page(params[:favorites_page]).per(3)
+    @recipes = current_user.recipes.order("name").page(params[:recipes_page]).per(8)
+    @favorites = current_user.favorites.order("name").page(params[:favorites_page]).per(8)
   end
 
   def edit

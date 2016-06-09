@@ -15,7 +15,7 @@ class Recipe < ActiveRecord::Base
   accepts_nested_attributes_for :ingredients, reject_if: :all_blank, allow_destroy: true
 
   def self.search(search)
-    where("lower(name) LIKE ? or lower(course) LIKE ? or lower(kitchen) LIKE ? or lower(season) LIKE ? or lower(category) LIKE ?", "%#{search.downcase}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    where("lower(name) LIKE ? or lower(course) LIKE ? or lower(kitchen) LIKE ? or lower(season) LIKE ? or lower(category) LIKE ?", "%#{search.downcase}%", "%#{search.downcase}%", "%#{search.downcase}%", "%#{search.downcase}%", "%#{search.downcase}%")
   end
 
 end
