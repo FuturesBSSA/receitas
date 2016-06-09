@@ -3,19 +3,19 @@
   <div class="recipe-name text-center">
     <h2><%= @recipe.name %></h2>
     <% if current_user %>
-      <% if current_user.favorites.exists?(id: @recipe.id) %>
-      <ul class="list-inline product-controls">
-        <%= link_to favorite_recipe_path(@recipe, type: "unfavorite"), method: :put do %>
-        <li><i class="fa fa-heart"></i></li>
-        <% end %>
-      </ul>
-      <% else %>
-      <ul class="list-inline product-controls">
-        <%= link_to favorite_recipe_path(@recipe, type: "favorite"), method: :put do %>
-        <li><i class="fa fa-heart"></i></li>
-        <% end %>
-      </ul>
+    <% if current_user.favorites.exists?(id: @recipe.id) %>
+    <ul class="list-inline product-controls-red">
+      <%= link_to favorite_recipe_path(@recipe, type: "unfavorite"), method: :put do %>
+      <li><i class="fa fa-heart"></i></li>
       <% end %>
+    </ul>
+    <% else %>
+    <ul class="list-inline product-controls">
+      <%= link_to favorite_recipe_path(@recipe, type: "favorite"), method: :put do %>
+      <li><i class="fa fa-heart"></i></li>
+      <% end %>
+    </ul>
+    <% end %>
     <% end %>
 
     <p> Gemaakt door <%= @recipe.user.first_name %></p>
@@ -28,34 +28,7 @@
 
 <div class="wrapper-recipe">
   <div class="ingredients-section">
-    <div class="container is-small">
-      <div class="recipe">
-        <div class="recipe-photo">
-          <%= cl_image_tag @recipe.photo, height: 250, width: 300, crop: :fill %>
-        </div>
-
-        <h4>Ingrediënten</h4>
-          <div class="persons">
-            <i class="fa fa-users"> <%= @recipe.number_of_persons %> personen </i>
-          </div>
-        <div class="ingredients">
-          <div class="ingredient-info text-left">
-            <% @recipe.ingredients.each do |ingredient| %>
-            <ul>
-              <%= ingredient.quantity %>
-              <%= ingredient.unit  %>
-              <%= ingredient.name  %>
-            </ul>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="prep-section">
-    <div class="container is-small">
+  <div class="container is-small">
       <div class="text-center">
         <div class="row">
          <div class="col-xs-6 col-sm-3">
@@ -101,15 +74,38 @@
     </div>
     <hr>
   </div>
+    <div class="container is-small">
+      <div class="recipe">
+        <h4>Ingrediënten</h4>
+        <div class="persons">
+          <i class="fa fa-users"> <%= @recipe.number_of_persons %> personen </i>
+        </div>
+        <div class="ingredients">
+          <div class="ingredient-info text-left">
+            <% @recipe.ingredients.each do |ingredient| %>
+            <ul>
+              <%= ingredient.quantity %>
+              <%= ingredient.unit  %>
+              <%= ingredient.name  %>
+            </ul>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="prep-section">
+
   <h4 class="text-center">Bereidingswijze</h4>
   <div class="container is-small">
     <div class="description">
       <div class="prep dont-break-out">
-      <%= simple_format(@recipe.description) %>
+        <%= simple_format(@recipe.description) %>
       </div>
     </div>
   </div>
-</div>
 </div>
 </div>
 
@@ -132,9 +128,9 @@
         </div>
         <div id="review">
           <% if @recipe.reviews.blank? %>
-            Geef als eerste een recensie over <strong><%= @recipe.name %></strong>
+          Geef als eerste een recensie over <strong><%= @recipe.name %></strong>
           <% else %>
-            <%= render @reviews %>
+          <%= render @reviews %>
           <% end %>
         </div>
       </div>
