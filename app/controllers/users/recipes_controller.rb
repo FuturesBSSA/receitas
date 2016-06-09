@@ -15,9 +15,9 @@ class Users::RecipesController < ApplicationController
     @user = current_user
     @recipe.user = @user
     if @recipe.save!
-      redirect_to recipe_path(@recipe), notice: 'Jouw nieuwe recept is geplaatst'
+      redirect_to recipe_path(@recipe), notice: 'Jouw nieuwe recept is geplaatst!'
     else
-      render 'new'
+      render 'users/recipes/new', notice: 'Whoops iets ging verkeerd!'
     end
   end
 
