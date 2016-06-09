@@ -1,6 +1,7 @@
 <%  @kitchen = ['Belgisch', 'Brits', 'Chinees', 'Frans', 'Grieks', 'Indonesisch', 'Indiaas', 'Italiaans', 'Japans', 'Marokkaans', 'Midden-Oosters', 'Mexicaans', 'Nederlands', 'Portugees', 'Scandinavisch' 'Spaans', 'Thais', 'Turks'] %>
 <% @season = ['Zomer', 'Herfst', 'Winter', 'Lente'] %>
 <% @category = ['Vis', 'Vlees','Vegetarisch'] %>
+<% @course = ['Voorgerecht', 'Hoofdgerecht', 'Nagerecht'] %>
 <div class="form-background">
   <div class="container is-small new-recipe">
 
@@ -14,7 +15,7 @@
         <%= f.error_notification %>
         <%= f.input :name, :label => "Recept naam" %>
         <%= f.input :summary, hint: "max 30 tekens", :label => "Samenvatting", placeholder: "Geeft een korte samenvatting. bv: Een zomers gerecht met kip" %>
-        <%= f.input :course, :label => "Gang", placeholder: "Voor, Na of Hoofdgerecht" %>
+        <%= f.input :course, :label => "Gang", :collection => @course %>
         <%= f.input :kitchen, :label => "Keuken", :collection => @kitchen %>
         <%= f.input :category, :label => "Categorie", :collection => @category %>
         <%= f.input :season, :label => "Seizoen", :collection => @season %>
@@ -32,7 +33,7 @@
           </div>
         </div>
         <br>
-        <%= f.input :description, :label => "Beschrijving", placeholder: "Geef uitleg over het recept." %>
+        <%= f.input :description, :label => "Beschrijving", placeholder: "Geef uitleg over de bereiding van het recept." %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
 
