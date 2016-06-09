@@ -20,7 +20,7 @@
 
     <p> Gemaakt door <%= @recipe.user.first_name %></p>
     <div class="user-avatar">
-      <%= image_tag @recipe.user.photo, class: "avatar-large" %>
+      <%= image_tag @recipe.user.photo, height: 50, width: 50, crop: :fill, class: "avatar-large" %>
     </div>
 
   </div>
