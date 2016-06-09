@@ -1,10 +1,14 @@
 <h4>Hi <strong><%= @user.first_name %>!</strong></h4>
 
-<p>Welcome to Zerra!</p>
+<p>Welkom bij Zerra!</p>
 
-<p>Thank you for signing up at Zerra. After confirming your accout, you can add your own recipes</p>
-<p>You can confirm your account email through the link below:</p>
+<%= image_tag "Zerra.png" %>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token), class: "btn bnt-primary" %></p>
+<p>Dank u voor het aanmelden bij Zerra. Na het bevestigen van jouw accout, kunt u uw eigen recepten toevoegen</p>
+<p>U kunt uw account bevestigen via de onderstaande link:</p>
 
-<p>If you didn't request this, please ignore this email.</p>
+<p><%= link_to 'Bevestig mijn account', confirmation_url(@resource, confirmation_token: @token), class: "btn bnt-primary" %></p>
+
+<p>Als je dit niet hebt aangevraagd, negeer dan deze e-mail .</p>
+
+<p>The Zerra team</p>
