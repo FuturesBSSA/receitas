@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :find_recipe, only: [:favorite, :upvote]
+  before_action :find_recipe, only: [:favorite, :upvote, :index]
 
   def index
     if params[:search]
