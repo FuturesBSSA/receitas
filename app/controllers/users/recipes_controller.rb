@@ -40,6 +40,8 @@ class Users::RecipesController < ApplicationController
       :course,
       :cooking_time,
       :prep_time,
+      :number_of_persons,
+      :season,
       :photo,
       :photo_cache,
       ingredients_attributes: [:id, :name, :quantity, :unit, :_destroy])

@@ -11,7 +11,7 @@
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
 
-CLOUDINARY_URL: "cloudinary://184615538634735:Slr9Xfi7NX_POM0kLje9KMThoZE@seifer"
+CLOUDINARY_URL: "cloudinary://859396264743222:GwKyb4_hLZ866WWTKkFBMljJQcI@zerra"
 
 GMAIL_USERNAME: info.recepten@gmail.com
 
