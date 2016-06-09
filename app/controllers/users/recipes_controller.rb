@@ -14,10 +14,11 @@ class Users::RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @user = current_user
     @recipe.user = @user
-    if @recipe.save!
+    if @recipe.valid?
+      @recipe.save!
       redirect_to recipe_path(@recipe), notice: 'Jouw nieuwe recept is geplaatst!'
     else
-      redirect_to :back, notice: 'Whoops iets ging verkeerd!'
+      render "users/recipes/new"
     end
   end
 
