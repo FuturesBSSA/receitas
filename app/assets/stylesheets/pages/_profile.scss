@@ -15,3 +15,20 @@
 .sand-color {
   background: #EAE0CC;
 }
+
+/* Controls design for unfavorite recipe */
+.product-controls-black {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 0px;
+}
+.product-controls-black a {
+  padding: 0 20px;
+  font-size: 17px;
+  color: black;
+}
+.product-controls-red a:hover {
+  color: #D3473C !important;
+}
